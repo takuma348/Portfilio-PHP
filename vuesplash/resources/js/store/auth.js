@@ -2,7 +2,10 @@
     user: null
   }
   
-  const getters = {}
+  const getters = {
+    check: state => !! state.user,
+    username: state => state.user ? state.user.name : ''
+  }
   
   const mutations = {
     setUser (state, user) {
