@@ -18,6 +18,8 @@ class Photo extends Model
         'id', 'owner', 'url', 'comments',
         'likes_count', 'liked_by_user',
     ];
+    protected $perPage = 5;
+
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -102,4 +104,6 @@ class Photo extends Model
     {
         return $this->belongsToMany('App\User', 'likes')->withTimestamps();
     }
+    
+
 }
