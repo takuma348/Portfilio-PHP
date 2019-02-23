@@ -1,7 +1,5 @@
 <?php
-
 use Faker\Generator as Faker;
-
 $factory->define(App\Photo::class, function (Faker $faker) {
     return [
         'id' => str_random(12),
