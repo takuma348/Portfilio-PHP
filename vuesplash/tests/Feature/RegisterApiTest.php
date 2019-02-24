@@ -17,7 +17,7 @@ class RegisterApiTest extends TestCase
     public function should_新しいユーザーを作成して返却する()
     {
         $data = [
-            'name' => 'vuesplashuser',
+            'name' => 'vuesplash user',
             'email' => 'dummy@email.com',
             'password' => 'test1234',
             'password_confirmation' => 'test1234',
@@ -29,7 +29,7 @@ class RegisterApiTest extends TestCase
         $this->assertEquals($data['name'], $user->name);
 
         $response
-            ->assertStatus(200)
+            ->assertStatus(201)
             ->assertJson(['name' => $user->name]);
     }
 }
