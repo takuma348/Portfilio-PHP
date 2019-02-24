@@ -29,7 +29,7 @@ class LikeApiTest extends TestCase
     {
         $response = $this->actingAs($this->user)
             ->json('PUT', route('photo.like', [
-                'photo' => $this->photo->id,
+                'id' => $this->photo->id,
             ]));
 
         $response->assertStatus(200)
@@ -61,7 +61,7 @@ class LikeApiTest extends TestCase
 
         $response = $this->actingAs($this->user)
             ->json('DELETE', route('photo.like', [
-                'photo' => $this->photo->id,
+                'id' => $this->photo->id,
             ]));
 
         $response->assertStatus(200)
