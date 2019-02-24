@@ -26,3 +26,5 @@ Route::post('/photos/{photo}/comments', 'PhotoController@addComment')->name('pho
 Route::put('/photos/{id}/like', 'PhotoController@like')->name('photo.like');
 // いいね解除
 Route::delete('/photos/{id}/like', 'PhotoController@unlike');
+// コメント
+Route::post('/photos/{photo}/comments', 'PhotoController@addComment')->name('photo.comment');
