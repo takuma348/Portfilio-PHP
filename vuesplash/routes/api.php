@@ -28,3 +28,9 @@ Route::put('/photos/{id}/like', 'PhotoController@like')->name('photo.like');
 Route::delete('/photos/{id}/like', 'PhotoController@unlike');
 // コメント
 Route::post('/photos/{photo}/comments', 'PhotoController@addComment')->name('photo.comment');
+// トークンリフレッシュ
+Route::get('/reflesh-token', function (Illuminate\Http\Request $request) {
+    $request->session()->regenerateToken();
+
+    return response()->json();
+});
